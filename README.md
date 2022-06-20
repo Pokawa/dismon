@@ -9,9 +9,9 @@ variables. Dismon provides easy to use syncing interface to use with shared data
 
 ### lock
 
-Broadcast REQUEST signal, and wait for all replies. When all replies received perform data synchronisation if
-applicable. Upon REQUEST if receiving monitor is inactive or requesting with lower priority it responds immediately with
-REPLY signal, otherwise adds REQUEST to deferred set.
+Broadcast _REQUEST_ signal, and wait for all replies. When all replies received perform data synchronisation if
+applicable. Upon _REQUEST_ if receiving monitor is inactive or requesting with lower priority it responds immediately with
+_REPLY_ signal, otherwise adds _REQUEST__ to deferred set.
 
 ### unlock
 
@@ -19,18 +19,18 @@ Increment current version number of shared data and send replies to all deferred
 
 ### wait
 
-Broadcast WAIT message with variable name. Unlock monitor and wait for NOTIFY signal. Upon Notify signal broadcast
-UNWAIT message with variable name and perform lock action. Upon WAIT / UNWAIT message receiving monitor adds / removes
+Broadcast _WAIT_ message with variable name. Unlock monitor and wait for _NOTIFY_ signal. Upon _NOTIFY_ signal broadcast
+UNWAIT message with variable name and perform lock action. Upon _WAIT_ / _UNWAIT_ message receiving monitor adds / removes
 sender to / from variable queue.
 
 ### notify one / all
 
-Send NOTIFY signal to first client / all clients on variable queue.
+Send _NOTIFY_ signal to first client / all clients on variable queue.
 
 ### sync
 
-Broadcast SYNC signal, and wait for all STATE responses. STATE response consist of version number and serialised state.
-If STATE with the highest version number has higher version that local version then apply it locally.
+Broadcast _SYNC_ signal, and wait for all _STATE_ responses. _STATE_ response consist of version number and serialised state.
+If _STATE_ with the highest version number has higher version that local version then apply it locally.
 
 ## Compilation
 
