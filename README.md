@@ -1,6 +1,6 @@
 # Dismon
 
-Distributed monitor created using ZMQ and C++20. Gtest was used for unit tests and Spdlog for logging.
+Distributed monitor created using ØMQ and C++20. Gtest was used for unit tests and Spdlog for logging.
 
 ## Algorithm
 
