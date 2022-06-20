@@ -1,0 +1,17 @@
+file(GLOB_RECURSE SERIALIZATION_HEADERS dismon/serialization/*.hpp)
+file(GLOB_RECURSE COMMUNICATION_HEADERS dismon/communication/*.hpp)
+file(GLOB_RECURSE MONITOR_HEADERS dismon/*.hpp)
+
+set(HEADERS ${SERIALIZATION_HEADERS} ${COMMUNICATION_HEADERS} ${MONITOR_HEADERS})
+find_package(cppzmq REQUIRED)
+find_package(Threads REQUIRED)
+find_package(spdlog REQUIRED)
+find_package(fmt REQUIRED)
+
+add_library(DisMon INTERFACE)
+target_include_directories(DisMon INTERFACE .)
+target_sources(DisMon INTERFACE ${HEADERS})
+target_link_libraries(DisMon INTERFACE cppzmq)
+target_link_libraries(DisMon INTERFACE Threads::Threads)
+target_link_libraries(DisMon INTERFACE spdlog::spdlog)
+target_link_libraries(DisMon INTERFACE fmt::fmt)

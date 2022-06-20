@@ -1,0 +1,6 @@
+build
+
+# jetbrains
+.idea
+cmake-build-debug
+cmake-buil-release
