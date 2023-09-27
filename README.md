@@ -102,4 +102,10 @@ transparent for user.
 consumer my_addr [other_addr]...
 producer my_addr [other_addr]... start_num
 ```
+## TODO
 
+- [ ] Simplify syncing mechanism
+- [ ] Add network configuration struct
+- [ ] Add support for mutiple mutexes and syncing objects
+- [ ] Create standalone classes of mutex nad conditional variable
+- [ ] Add conditional critical regions
